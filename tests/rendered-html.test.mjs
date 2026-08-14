@@ -42,3 +42,13 @@ test("includes the generated social card and a replaceable resume download", asy
   assert.match(source, /Karsci Vincze Cespedes standing outdoors/);
   assert.match(source, /Machine Learning & Data Science/);
 });
+
+test("exports a compact Vercel document with visible body content", async () => {
+  const html = await readFile(new URL("../.vercel-static/index.html", import.meta.url), "utf8");
+  assert.match(html, /<body[^>]*>\s*<main>/i);
+  assert.match(html, /id="about"/);
+  assert.match(html, /src="\/karsci-cespedes\.jpg"/);
+  assert.match(html, /href="\/karsci-cespedes-resume\.pdf"/);
+  assert.doesNotMatch(html, /data:(?:image\/jpeg|application\/pdf);base64/i);
+  assert.ok(Buffer.byteLength(html) < 100_000, "static HTML should stay below 100 KB");
+});
