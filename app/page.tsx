@@ -15,29 +15,39 @@ const skills = [
 
 const experience = [
   {
-    period: "2024 — Present",
+    period: "August2025 — Present",
     title: "Business System Analyst",
     organisation: "Greenergy Development · Cagayan de Oro",
     text: "Building data capture systems, business databases, and reliable pipelines that turn operational metrics into strategic recommendations.",
   },
   {
-    period: "2025 — 2026",
-    title: "Part-time Instructor",
+    period: "August 2025 — May 2026",
+    title: "Data Science Instructor",
     organisation: "USTSP · Cagayan de Oro",
     text: "Taught Python, data structures, and data science fundamentals while designing practical, code-focused assessments.",
   },
   {
-    period: "2025",
+    period: "March 2025 — June 2025",
     title: "AI Annotator",
     organisation: "Klatch Technologies · Remote",
     text: "Produced high-quality labelled datasets and refined annotation guidelines with AI development teams.",
+  },
+  {
+    period: "February 2025 — May 2025",
+    title: "Planning, Monitoring, Evaluation, and Quality Management Intern",
+    organisation: "Department of Science and Technology · Cagayan de Oro",
+    text: "Audited and cleaned government databases, identifying data integrity issues and implementing corrective measures to improve reliability.",
   },
 ];
 
 const certificates = [
   { type: "Credential", title: "Machine Learning & Data Science", issuer: "Kaggle" },
+  { type: "Credential", title: "Intro to SQL", issuer: "Kaggle" },
+  { type: "Credential", title: "Python", issuer: "Kaggle" },
+  { type: "Credential", title: "Pandas", issuer: "Kaggle" },
   { type: "Course", title: "Introduction to Generative AI", issuer: "AWS" },
   { type: "Credential", title: "Analytics Cloud & Build Apps", issuer: "SAP" },
+  { type: "Credential", title: "TOPCIT Certification ", issuer: "The Ministry of Science and ICT of the Republic of Korea" },
 ];
 
 const events = [
@@ -114,7 +124,7 @@ export default function Home() {
 
       <section className="education section-shell" id="education">
         <p className="section-label">(04) EDUCATION</p>
-        <div className="education-card"><span className="stamp">EDU<br />25</span><div><p className="eyebrow">BS Data Science · Cum Laude · 2021 — 2025</p><h2>USTSP <em>graduate.</em></h2><p>University of Science and Technology of Southern Philippines · Cagayan de Oro</p></div><span className="arrow">↗</span></div>
+        <div className="education-card"><span className="stamp">EDU<br />25</span><div><p className="eyebrow">BS Data Science · Cum Laude · 2021 — 2025</p><h2>USTP <em>graduate.</em></h2><p>University of Science and Technology of Southern Philippines · Cagayan de Oro</p></div><span className="arrow">↗</span></div>
       </section>
 
       <section className="certificates section-shell" id="certificates">
