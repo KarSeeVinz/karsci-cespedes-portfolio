@@ -42,9 +42,6 @@ const stylesheetHref = stylesheetMatch?.[1];
 const stylesheet = stylesheetHref
   ? await readFile(path.join(clientDirectory, stylesheetHref.replace(/^\//, "")), "utf8")
   : "";
-const portrait = await readFile(path.join(clientDirectory, "karsci-cespedes.jpg"));
-const resume = await readFile(path.join(clientDirectory, "karsci-cespedes-resume.pdf"));
-
 const staticHtml = renderedHtml
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
   .replace(/<link\b(?=[^>]*\brel=["']modulepreload["'])[^>]*>/gi, "")
@@ -52,14 +49,6 @@ const staticHtml = renderedHtml
   .replace(
     /<link\b[^>]*\brel=["']stylesheet["'][^>]*>/i,
     `<style data-portfolio-styles>${stylesheet}</style>`,
-  )
-  .replace(
-    /src=["']\/karsci-cespedes\.jpg["']/g,
-    `src="data:image/jpeg;base64,${portrait.toString("base64")}"`,
-  )
-  .replace(
-    /href=["']\/karsci-cespedes-resume\.pdf["']/g,
-    `href="data:application/pdf;base64,${resume.toString("base64")}"`,
   );
 
 await rm(outputDirectory, { recursive: true, force: true });
